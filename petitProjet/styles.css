@@ -1,0 +1,162 @@
+
+
+    /* body header div:first-child {
+        border: 1px dashed red;
+    } */
+
+/* pour faire fonctionner les font sur tout le document */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* pour éviter d'avoir des problème de taille a cause des border et autre */
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px){
+    .header .container{
+        flex-direction: row;
+    }
+    .header .informations{
+        width: 50%;
+    }
+
+    .header .picture{
+        width: 50%;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    height: 60vh;
+    background-color: #f5f5f5;
+    
+}
+
+
+)
+
+.header .informations{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.header .informations .name{
+    background-color: purple;
+    color: white;
+    text-transform: uppercase;
+    padding: .5rem;
+}
+
+.header .informations .title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: purple;
+    margin-top: 0.5rem;
+}
+
+.header .informations .description{
+    color: purple;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+.header .picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    animation-name: FadeToLeft;
+    animation-duration: 1s;
+    animation-delay: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    
+    /* border: 2px dashed blue; */
+}
+
+.header .picture .img{
+    background-image: url('images/musique-1.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 95%;
+    min-height: 20rem;
+    height: 75%;
+    border-radius: 1rem;
+}
+
+.description{
+    text-align: justify;
+}
+
+.services .services-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    
+    
+}
+.services .title{
+    color: purple;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+}
+
+.service{
+    /* width: calc(100% / 3 -1%);
+    margin-right: calc(3% / 2);
+    margin-bottom: 1rem; */
+    margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+    background-color: rgb(207, 207, 207);
+    transition: box-shadow .1s ease-in-out,
+    transform .1s ease-in-out;
+}
+
+.service:hover{
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    transform: scale(1.025);
+}
+
+.service:nth-child(3n+0){
+    margin-right: 0;
+}
+
+.service .icon{
+    color: white;
+    font-size: 2.5rem;
+    background-color: purple;
+    
+}
+
+@keyframes FadeToLeft {
+from{
+    opacity: 0;
+    transform: translateX(100%);
+}
+to{
+    opacity: 1;
+    transform: translate(0);
+
+}
+}
